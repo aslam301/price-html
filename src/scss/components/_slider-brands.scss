@@ -64,7 +64,8 @@
 			visibility: hidden;
 			transition:
 				opacity var(--t-duration),
-				visibility var(--t-duration);
+				visibility var(--t-duration),
+				transform var(--t-duration);
 
 			@include breakpoint-down(mobile) {
 				opacity: 1;
@@ -83,7 +84,6 @@
 		width: 100%;
 		max-width: 13.4rem;
 		margin-inline: auto;
-		transition: transform var(--t-duration);
 
 		@include breakpoint-down(mobile) {
 			max-width: 8rem;
