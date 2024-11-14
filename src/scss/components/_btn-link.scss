@@ -1,0 +1,26 @@
+// ------------------------------------------------------------
+//	Btn Link
+// ------------------------------------------------------------
+
+.btn-link {
+	display: inline-block;
+
+	& > span {
+		font-size: 2rem;
+		line-height: 1.1;
+		font-weight: 400;
+		text-decoration: underline;
+		transition: color var(--t-duration);
+
+		@include breakpoint-down(mobile) {
+			font-size: 1.8rem;
+		}
+	}
+
+	@media (hover) and (pointer: fine) {
+		&:hover > span {
+			text-decoration: none;
+			color: var(--c-secondary-alt);
+		}
+	}
+}

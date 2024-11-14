@@ -1,0 +1,33 @@
+// ==========================================================================
+// Variables
+// ==========================================================================
+
+:root {
+	--fz-html: 62.5%;
+	--fz-base: clamp(1.6rem, 4vw, 2rem);
+	--fw-base: 400;
+	--lh-base: 1.8; // 36
+	--lh-base-m: 1.5; // 24
+	--ff-base: 'Sohne', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	--c-base: #222;
+	--c-primary: #0a0b09;
+	--c-secondary: #ff3c3c;
+	--c-secondary-alt: #1278ff;
+	--c-tertiary: #f2f2f2;
+	--c-tertiary-alt: #f6f6f6;
+	--c-quaternary: #bebebe;
+	--c-quaternary-alt: #72f0a4;
+	--t-duration: 0.4s;
+	--b-radius: clamp(1.4rem, 2vw, 2.4rem);
+}
+
+$breakpoints: (
+	mobile-small: 374px,
+	mobile: 767px,
+	tablet-portrait: 985px,
+	tablet: 1023px,
+	small-desktop: 1199px,
+	medium-desktop: 1390px,
+	large-desktop: 1440px,
+	xlarge-desktop: 1540px,
+);

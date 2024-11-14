@@ -1,0 +1,83 @@
+// ------------------------------------------------------------
+//	Tiny Slider
+// ------------------------------------------------------------
+
+.tns {
+	// .tns-controls
+	&-controls {
+		& > button {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 200;
+			width: 3rem;
+			height: 3rem;
+			border: 0;
+			cursor: pointer;
+			border-radius: 0;
+			background: none;
+			font-size: 0;
+			line-height: 0;
+			transition: opacity var(--t-duration);
+
+			&:before,
+			&:after {
+				content: ' ';
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 50%;
+				height: 2px;
+				margin-top: -1px;
+				background-color: black;
+				transition: background var(--t-duration);
+			}
+
+			&:before {
+				transform: rotate(45deg);
+			}
+
+			&:after {
+				transform: rotate(-45deg);
+			}
+
+			@media (hover) and (pointer: fine) {
+				&:hover:before,
+				&:hover:after {
+					background-color: var(--c-secondary-alt);
+				}
+			}
+		}
+
+		& > button[data-controls='prev'] {
+			left: -4rem;
+
+			@include breakpoint-down(xlarge-desktop) {
+				left: -2rem;
+			}
+
+			&:before,
+			&:after {
+				transform-origin: left center;
+			}
+		}
+
+		& > button[data-controls='next'] {
+			right: -4rem;
+
+			@include breakpoint-down(xlarge-desktop) {
+				right: -2rem;
+			}
+
+			&:before,
+			&:after {
+				transform-origin: right center;
+			}
+		}
+
+		& > button[disabled] {
+			opacity: 0.5;
+			pointer-events: none;
+		}
+	}
+}

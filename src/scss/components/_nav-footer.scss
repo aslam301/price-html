@@ -1,0 +1,27 @@
+// ------------------------------------------------------------
+//	Nav Footer
+// ------------------------------------------------------------
+
+.nav-footer {
+	& > ul {
+		gap: 1.6rem 3.5rem;
+
+		@include breakpoint-down(tablet-portrait) {
+			gap: 1.6rem 2rem;
+		}
+	}
+
+	& > ul > li {
+		@include the-font-size(s);
+	}
+
+	a {
+		transition: color var(--t-duration);
+
+		@media (hover) and (pointer: fine) {
+			&:hover {
+				color: var(--c-secondary-alt);
+			}
+		}
+	}
+}

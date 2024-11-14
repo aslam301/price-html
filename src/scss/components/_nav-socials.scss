@@ -1,0 +1,27 @@
+// ------------------------------------------------------------
+//	Nav Socials
+// ------------------------------------------------------------
+
+.nav-socials {
+	& > ul {
+		gap: 3rem;
+
+		@include breakpoint-down(tablet-portrait) {
+			gap: 1.6rem;
+		}
+	}
+
+	& > ul > li {
+		@include the-font-size(m);
+	}
+
+	a {
+		transition: color var(--t-duration);
+
+		@media (hover) and (pointer: fine) {
+			&:hover {
+				color: var(--c-secondary-alt);
+			}
+		}
+	}
+}

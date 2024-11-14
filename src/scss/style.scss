@@ -1,0 +1,39 @@
+// ==========================================================================
+// Vendor
+// ==========================================================================
+
+//@import 'vendor_name directory from node_modules/vendor.css';
+
+@import 'tiny-slider/dist/tiny-slider.css';
+@import '@fortawesome/fontawesome-free/css/all.css';
+
+// ==========================================================================
+// Generic
+// ==========================================================================
+
+@import 'generic/variables';
+@import 'generic/functions';
+@import 'generic/mixins';
+@import 'generic/reset';
+@import 'generic/reset-btn';
+@import 'generic/reset-icon';
+@import 'generic/reset-list';
+@import 'generic/reset-logo';
+@import 'generic/reset-nav';
+@import 'generic/reset-section';
+@import 'generic/fonts';
+@import 'generic/base';
+@import 'generic/helpers';
+@import 'generic/data-loading';
+
+// ==========================================================================
+// Components
+// ==========================================================================
+
+@import 'components/*';
+
+// ==========================================================================
+// Overwrites
+// ==========================================================================
+
+@import 'overwrites/*';

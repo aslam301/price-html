@@ -1,0 +1,16 @@
+/* ------------------------------------------------------------ *\
+	Reset Navigations
+\* ------------------------------------------------------------ */
+
+[class^='nav'] {
+	& > ul {
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+	}
+}

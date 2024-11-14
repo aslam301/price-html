@@ -1,0 +1,82 @@
+// ------------------------------------------------------------
+//	Section
+// ------------------------------------------------------------
+
+.section {
+	margin-block: 10rem;
+
+	@include breakpoint-down(mobile) {
+		margin-block: 6.5rem;
+	}
+
+	&:first-child {
+		margin-top: 5.7rem;
+
+		@include breakpoint-down(mobile) {
+			margin-top: 3rem;
+		}
+	}
+
+	// .section__head
+	&__head {
+		h1 {
+			margin-bottom: 0.5rem;
+		}
+
+		p {
+			max-width: 65.4rem;
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 2.7rem;
+		}
+
+		& > *:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	// .section__slider
+	&__slider {
+		&:not(:first-child) {
+			margin-top: clamp(2rem, 3vw, 4.4rem);
+		}
+	}
+
+	// ------------------------------------------------------------
+	//	-- Categories [ .section--categories ]
+	// ------------------------------------------------------------
+
+	// .section--categories .section__body
+	&--categories {
+		margin-bottom: 8.9rem;
+
+		@include breakpoint-down(mobile) {
+			margin-bottom: 5.4rem;
+		}
+	}
+
+	// .section--categories .section__body
+	&--categories &__body {
+		width: auto;
+		margin-right: calc((144rem - 100vw) / 2);
+		padding: 0 2rem;
+		margin-left: -2rem;
+		overflow: hidden;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+
+		@include breakpoint-down(large-desktop) {
+			margin-right: -3.8rem;
+		}
+
+		@include breakpoint-down(tablet-portrait) {
+			margin-right: -2.5rem;
+		}
+
+		@include breakpoint-down(mobile) {
+			margin-inline: -1.5rem;
+			padding-left: 1.5rem;
+		}
+	}
+}

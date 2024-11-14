@@ -1,0 +1,16 @@
+export default {
+	Hover: 'hover',
+	Active: 'active',
+	Open: 'open',
+	IsTouch: 'is-touch',
+	IsIos: 'is-ios',
+	IsIE: 'is-ie',
+	IsEdge: 'is-edge',
+	IsScrollTop: 'is-scroll-top',
+	IsAnimate: 'is-animate',
+	HasStickyBar: 'has-sticky-bar',
+	ShowFixedHeader: 'show-fixed-header',
+	ShowHeaderSearch: 'show-header-search',
+	ShowNavMain: 'show-nav-main',
+	PageLoaded: 'page-loaded',
+};

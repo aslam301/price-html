@@ -1,0 +1,134 @@
+// ------------------------------------------------------------
+//	Footer
+// ------------------------------------------------------------
+
+.footer {
+	width: 100%;
+	margin-block:
+		12,
+		8rem 5.8rem;
+
+	@include breakpoint-down(mobile) {
+		margin-block: 8.5rem 2.3rem;
+	}
+
+	// .footer__inner
+	&__inner {
+		width: 100%;
+		background-color: var(--c-tertiary);
+		border-radius: var(--b-radius);
+		padding: 4rem 4.6rem;
+
+		@include breakpoint-down(mobile) {
+			padding: 2.3rem;
+		}
+	}
+
+	// .footer__head
+	&__head {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		gap: 1.6rem;
+
+		@include breakpoint-down(mobile) {
+			flex-direction: column;
+		}
+
+		&:not(:last-child) {
+			padding-bottom: 4rem;
+			margin-bottom: 2.9rem;
+			border-bottom: 1px solid var(--c-quaternary);
+
+			@include breakpoint-down(mobile) {
+				margin-bottom: 1.8rem;
+				padding-bottom: 2.3rem;
+			}
+		}
+	}
+
+	// .footer__head__copy
+	&__head__copy {
+		margin-right: auto;
+		display: flex;
+		align-items: center;
+		gap: 3.4rem;
+		max-width: 50%;
+
+		@include breakpoint-down(tablet-portrait) {
+			max-width: calc(100% - 21.2rem);
+		}
+
+		@include breakpoint-down(mobile) {
+			width: 100%;
+			flex-direction: column;
+			max-width: 100%;
+			margin-right: 0;
+			gap: 0.9rem;
+			align-items: flex-start;
+		}
+	}
+
+	// .footer__head__copy-logo
+	&__head__copy-logo {
+		width: 17.9rem;
+
+		@include breakpoint-down(mobile) {
+			width: 14.3rem;
+		}
+
+		a {
+			display: block;
+			font-size: 0;
+			line-height: 0;
+			transition: opacity var(--t-duration);
+
+			@media (hover) and (pointer: fine) {
+				&:hover {
+					opacity: 0.75;
+				}
+			}
+		}
+
+		img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	// .footer__head__copy-entry
+	&__head__copy-entry {
+		@include the-font-size(s);
+	}
+
+	// .footer__head__actions
+	&__head__actions {
+		@include breakpoint-down(tablet-portrait) {
+			max-width: 18.2rem;
+			margin-left: auto;
+		}
+
+		@include breakpoint-down(mobile) {
+			max-width: 100%;
+			width: 100%;
+		}
+	}
+
+	// .footer__bar
+	&__bar {
+		display: flex;
+		align-items: center;
+
+		@include breakpoint-down(mobile) {
+			flex-direction: column;
+			gap: 2rem;
+			align-items: flex-start;
+		}
+	}
+
+	// .footer__bar-nav
+	&__bar-nav {
+		margin-right: auto;
+	}
+}

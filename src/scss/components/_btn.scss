@@ -1,0 +1,19 @@
+// ==========================================================================
+// Btn
+// ==========================================================================
+
+.btn {
+	display: inline-flex;
+	vertical-align: middle;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	text-decoration: none;
+	appearance: none;
+}
+
+// Btn block
+.btn--block {
+	display: block;
+	padding-inline: 0;
+}

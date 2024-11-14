@@ -1,0 +1,74 @@
+// ------------------------------------------------------------
+//	Article Category
+// ------------------------------------------------------------
+
+.article-category {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+
+	& > a {
+		@include pos-absolute;
+
+		z-index: 10;
+		font-size: 0;
+		line-height: 0;
+		text-decoration: none;
+	}
+
+	// .article-category__image
+	&__image {
+		width: 100%;
+		aspect-ratio: 1 / 1;
+		position: relative;
+		overflow: hidden;
+		background-image: url(/assets/images/category-bg.jpg);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		border-radius: var(--b-radius);
+
+		img {
+			position: absolute;
+			left: 2rem;
+			top: 2rem;
+			width: calc(100% - 4rem);
+			height: calc(100% - 4rem);
+			object-fit: contain;
+			object-position: center;
+			transition: transform var(--t-duration);
+
+			@include breakpoint-down(mobile) {
+				left: 1.3rem;
+				top: 1.3rem;
+				width: calc(100% - 2.6rem);
+				height: calc(100% - 2.6rem);
+			}
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 0.7rem;
+		}
+	}
+
+	// .article-category__title
+	&__title {
+		h5 {
+			transition: color var(--t-duration);
+
+			@include breakpoint-down(mobile) {
+				line-height: 1.27;
+			}
+		}
+	}
+
+	@media (hover) and (pointer: fine) {
+		&:hover &__image img {
+			transform: scale(0.9);
+		}
+
+		&:hover &__title h5 {
+			color: var(--c-secondary-alt);
+		}
+	}
+}

@@ -1,0 +1,24 @@
+/* ------------------------------------------------------------ *\
+	Reset Buttons
+\* ------------------------------------------------------------ */
+
+[class^='btn'] {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	cursor: pointer;
+	text-decoration: none;
+	appearance: none;
+	border-radius: 0;
+	box-shadow: none;
+	border: 0;
+	font-size: 0;
+	line-height: 0;
+	position: relative;
+
+	& > * {
+		display: inline-block;
+		vertical-align: middle;
+		pointer-events: none;
+	}
+}

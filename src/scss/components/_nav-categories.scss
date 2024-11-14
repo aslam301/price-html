@@ -1,0 +1,75 @@
+// ------------------------------------------------------------
+//	Nav Categories
+// ------------------------------------------------------------
+
+.nav-categories {
+	width: 100%;
+
+	& > ul {
+		gap: 1rem;
+		flex-wrap: nowrap;
+	}
+
+	& > ul > li.current > a {
+		background-color: black;
+		color: white;
+		pointer-events: none;
+	}
+
+	a {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		border: 1px solid black;
+		border-radius: 4rem;
+		padding: 0.5rem 1rem;
+		min-height: 6rem;
+		transition: background, border, color;
+		transition-duration: var(--t-duration);
+
+		@include breakpoint-down(mobile) {
+			min-height: 4.8rem;
+			padding: 0.5rem;
+		}
+
+		@media (hover) and (pointer: fine) {
+			&:hover {
+				border-color: var(--c-quaternary-alt);
+				background-color: var(--c-quaternary-alt);
+				color: var(--c-base);
+			}
+		}
+	}
+
+	img {
+		width: 4.5rem;
+		height: 4.5rem;
+		min-width: 4.5rem;
+		border-radius: 50%;
+		object-fit: cover;
+		object-position: center;
+		box-shadow: 0 0 0.4rem rgba(0, 0, 0, 0.1);
+
+		@include breakpoint-down(mobile) {
+			width: 3.6rem;
+			height: 3.6rem;
+			min-width: 3.6rem;
+		}
+	}
+
+	span {
+		@include the-font-size(m);
+
+		display: block;
+		padding-right: 1rem;
+		white-space: nowrap;
+
+		@include breakpoint-down(mobile) {
+			font-size: 1.5rem;
+		}
+
+		&:first-child {
+			padding-left: 1rem;
+		}
+	}
+}
