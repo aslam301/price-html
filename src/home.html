@@ -29,6 +29,34 @@
 					<div class="grid-flex grid-flex--categories">
 						<div class="grid-flex__col js__item">
 							<article class="article-category">
+								<a href="#section-products-04"></a>
+
+								<div class="article-category__image">
+									<img src="/assets/images/temp/png/category-04.png" alt="" />
+								</div><!-- /.article-category__image -->
+
+								<div class="article-category__title">
+									<h5>Most Loved Gifts</h5>
+								</div><!-- /.article-category__title -->
+							</article><!-- /.article-category -->
+						</div><!-- /.grid-flex__col -->
+
+						<div class="grid-flex__col js__item">
+							<article class="article-category">
+								<a href="#section-products-07"></a>
+
+								<div class="article-category__image">
+									<img src="/assets/images/temp/png/category-01.png" alt="" />
+								</div><!-- /.article-category__image -->
+
+								<div class="article-category__title">
+									<h5>Travel</h5>
+								</div><!-- /.article-category__title -->
+							</article><!-- /.article-category -->
+						</div><!-- /.grid-flex__col -->
+
+						<div class="grid-flex__col js__item">
+							<article class="article-category">
 								<a href="#section-products-01"></a>
 
 								<div class="article-category__image">
@@ -69,19 +97,7 @@
 							</article><!-- /.article-category -->
 						</div><!-- /.grid-flex__col -->
 
-						<div class="grid-flex__col js__item">
-							<article class="article-category">
-								<a href="#section-products-04"></a>
-
-								<div class="article-category__image">
-									<img src="/assets/images/temp/png/category-04.png" alt="" />
-								</div><!-- /.article-category__image -->
-
-								<div class="article-category__title">
-									<h5>Most Loved Gifts</h5>
-								</div><!-- /.article-category__title -->
-							</article><!-- /.article-category -->
-						</div><!-- /.grid-flex__col -->
+						
 
 						<div class="grid-flex__col js__item">
 							<article class="article-category">
@@ -111,24 +127,41 @@
 							</article><!-- /.article-category -->
 						</div><!-- /.grid-flex__col -->
 
-						<div class="grid-flex__col js__item">
-							<article class="article-category">
-								<a href="#section-products-07"></a>
-
-								<div class="article-category__image">
-									<img src="/assets/images/temp/png/category-01.png" alt="" />
-								</div><!-- /.article-category__image -->
-
-								<div class="article-category__title">
-									<h5>Travel</h5>
-								</div><!-- /.article-category__title -->
-							</article><!-- /.article-category -->
-						</div><!-- /.grid-flex__col -->
+						
 					</div><!-- /.grid-flex -->
 				</div><!-- /.section__body -->
 			</div><!-- /.shell -->
 		</section><!-- /.section--categories -->
 
+		<section class="section section--products" data-id="section-products-04">
+			<div class="shell">
+				<div class="section__head">
+					<h2>Most Loved Gifts</h2>
+				</div><!-- /.section__head -->
+
+				<div class="section__body">
+					{{> categories/most-loved-gifts/page-01 }}
+				</div><!-- /.section__body -->
+
+				<div class="section__slider">
+					{{> categories/most-loved-gifts/slider }}
+				</div><!-- /.section__slider -->
+			</div><!-- /.shell -->
+		</section><!-- /.section--products -->
+		
+		<section class="section section--products" data-id="section-products-07">
+			<div class="shell">
+				<div class="section__head">
+					<h2>Travel</h2>
+				</div><!-- /.section__head -->
+
+				<div class="section__slider">
+					{{> categories/travel/slider }}
+				</div><!-- /.section__slider -->
+			</div><!-- /.shell -->
+		</section><!-- /.section--products -->
+		
+		
 		<section class="section section--products" data-id="section-products-01">
 			<div class="shell">
 				<div class="section__head">
@@ -177,21 +210,7 @@
 			</div><!-- /.shell -->
 		</section><!-- /.section--products -->
 
-		<section class="section section--products" data-id="section-products-04">
-			<div class="shell">
-				<div class="section__head">
-					<h2>Most Loved Gifts</h2>
-				</div><!-- /.section__head -->
-
-				<div class="section__body">
-					{{> categories/most-loved-gifts/page-01 }}
-				</div><!-- /.section__body -->
-
-				<div class="section__slider">
-					{{> categories/most-loved-gifts/slider }}
-				</div><!-- /.section__slider -->
-			</div><!-- /.shell -->
-		</section><!-- /.section--products -->
+		
 
 		<section class="section section--products" data-id="section-products-05">
 			<div class="shell">
@@ -225,17 +244,7 @@
 			</div><!-- /.shell -->
 		</section><!-- /.section--products -->
 
-		<section class="section section--products" data-id="section-products-07">
-			<div class="shell">
-				<div class="section__head">
-					<h2>Travel</h2>
-				</div><!-- /.section__head -->
-
-				<div class="section__slider">
-					{{> categories/travel/slider }}
-				</div><!-- /.section__slider -->
-			</div><!-- /.shell -->
-		</section><!-- /.section--products -->
+		
 
 		{{> footer }}
 	</div><!-- /.wrapper -->
