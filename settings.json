@@ -1,0 +1,17 @@
+{
+	"type": "html",
+	"client_name": "Price",
+	"project_name": "Live Price Com",
+	"exclude_from_client_archive": [
+		"settings.json",
+		"node_modules"
+	],
+
+	"cleanup_in_old_working_copies": [
+	],
+
+	"scripts": {
+		"default": "yarn run dev",
+		"build": "yarn run build"
+	}
+}

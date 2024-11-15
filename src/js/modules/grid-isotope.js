@@ -85,8 +85,8 @@ function setAjax(theElement, theType) {
 
 	$.ajax(settings).done(function (response) {
 		const $response = $(response);
-		const $content = $response.find(parentId + ' ' + classNameContents);
-		const $btnMore = $response.find(parentId + ' ' + classNameAction);
+		const $content = $response.find(classNameContents);
+		const $btnMore = $response.find(classNameAction);
 
 		iso[index].insert($content);
 
