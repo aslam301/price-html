@@ -15,7 +15,7 @@ node_modules/
 # Large files
 FILES/
 live-price-com-new.zip
-
+backup/
 
 # Use yarn, don't commit package-lock.json
 yarn.lock
