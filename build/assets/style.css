@@ -3286,6 +3286,7 @@ blockquote:last-child {
   position: relative;
   aspect-ratio: 1/0.783;
   z-index: 1;
+  mix-blend-mode: multiply;
 }@media (max-width: 985px) {
   .article-product__image {
     position: absolute;
@@ -3304,7 +3305,6 @@ blockquote:last-child {
   object-fit: contain;
   object-position: center;
   transition: transform var(--t-duration);
-  mix-blend-mode: multiply;
 }.article-product__image a {
   display: block;
   width: 100%;
@@ -3738,6 +3738,7 @@ blockquote:last-child {
 }.grid-flex--products {
   --grid-gutter: 0;
   display: flex;
+  flex-direction: column;
   width: 100%;
 }.grid-flex--products .grid-flex__col, .grid-flex--products .grid-flex__col-sizer {
   width: 33.3333333333%;

@@ -27,6 +27,7 @@
 		position: relative;
 		aspect-ratio: 1 / 0.783;
 		z-index: 1;
+		mix-blend-mode: multiply;
 
 		@include breakpoint-down(tablet-portrait) {
 			position: absolute;
@@ -46,7 +47,6 @@
 			object-fit: contain;
 			object-position: center;
 			transition: transform var(--t-duration);
-			mix-blend-mode: multiply;
 		}
 
 		a {
