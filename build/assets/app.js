@@ -2271,6 +2271,8 @@ const classNameContents = ".js__items";
 const classNameContent = ".js__item";
 const classNameActions = ".js__actions";
 const classNameAction = ".js__action";
+const classNameSliders = ".js__slider";
+const classNameSlider = ".js-slider-brands";
 const classNameCategory = ".js__categories";
 if (length$2) {
   $("body").on("click", classNameCategory + " a", function(event) {
@@ -2309,6 +2311,7 @@ function setAjax(theElement, theType) {
   const parentId = "#" + $parent.attr("id");
   const index = parseInt($parent.data("index"), 10);
   const $id = $(parentId);
+  const $parents = $id.parents("section");
   const href = $this.attr("href");
   const settings = {
     url: href
@@ -2317,17 +2320,33 @@ function setAjax(theElement, theType) {
     return false;
   }
   if (theType == "category") {
+    const settingsSlider = {
+      url: href.replace("-01.html", "-slider.html")
+    };
     iso[index].remove($id.find(classNameContent));
+    $parents.find(classNameSlider).remove();
+    $parents.attr("data-loading", true);
+    $.ajax(settingsSlider).done(function(response) {
+      const $response = $(response);
+      const $slider = $response.find(classNameSlider);
+      if ($slider.length) {
+        $parents.find(classNameSliders).html($slider);
+        $(window).trigger("ajax-loaded");
+      }
+      setTimeout(function() {
+        $parents.attr("data-loading", false);
+      }, 400);
+    });
   }
   $id.find(classNameAction).remove();
   $id.attr("data-loading", true);
   $.ajax(settings).done(function(response) {
     const $response = $(response);
     const $content = $response.find(classNameContents);
-    const $btnMore = $response.find(classNameAction);
+    const $theBtnMore = $response.find(classNameAction);
     iso[index].insert($content);
-    if ($btnMore.length) {
-      $parent.find(classNameActions).html($btnMore);
+    if ($theBtnMore.length) {
+      $parent.find(classNameActions).html($theBtnMore);
     }
     setTimeout(function() {
       $id.attr("data-loading", false);
@@ -4892,45 +4911,54 @@ const element$1 = "js-slider-brands";
 const $element$1 = document.getElementsByClassName(element$1);
 const length$1 = $element$1.length;
 if (length$1) {
+  initSlider();
+  $(window).on("ajax-loaded", function() {
+    initSlider();
+  });
+}
+function initSlider() {
   for (let i = 0; i < length$1; i++) {
-    const $slider = tns({
-      container: $element$1[i].getElementsByClassName("js__slides")[0],
-      loop: false,
-      items: 7,
-      gutter: 26,
-      nav: false,
-      speed: 400,
-      mouseDrag: true,
-      responsive: {
-        0: {
-          disable: true
-        },
-        768: {
-          items: 3,
-          gutter: 20,
-          disable: false
-        },
-        985: {
-          items: 4,
-          gutter: 26
-        },
-        1024: {
-          items: 5
-        },
-        1100: {
-          items: 6
-        },
-        1300: {
-          items: 7
+    if (!$element$1[i].classList.contains(className.Active)) {
+      $element$1[i].classList.add(className.Active);
+      const $slider = tns({
+        container: $element$1[i].getElementsByClassName("js__slides")[0],
+        loop: false,
+        items: 7,
+        gutter: 26,
+        nav: false,
+        speed: 400,
+        mouseDrag: true,
+        responsive: {
+          0: {
+            disable: true
+          },
+          768: {
+            items: 3,
+            gutter: 20,
+            disable: false
+          },
+          985: {
+            items: 4,
+            gutter: 26
+          },
+          1024: {
+            items: 5
+          },
+          1100: {
+            items: 6
+          },
+          1300: {
+            items: 7
+          }
         }
-      }
-    });
-    $slider.events.on("transitionStart", () => {
-      $element$1[i].classList.add(className.IsAnimate);
-    });
-    $slider.events.on("transitionEnd", () => {
-      $element$1[i].classList.remove(className.IsAnimate);
-    });
+      });
+      $slider.events.on("transitionStart", () => {
+        $element$1[i].classList.add(className.IsAnimate);
+      });
+      $slider.events.on("transitionEnd", () => {
+        $element$1[i].classList.remove(className.IsAnimate);
+      });
+    }
   }
 }
 const element = "js-block-expand";

@@ -16,6 +16,8 @@ const classNameContents = '.js__items';
 const classNameContent = '.js__item';
 const classNameActions = '.js__actions';
 const classNameAction = '.js__action';
+const classNameSliders = '.js__slider';
+const classNameSlider = '.js-slider-brands';
 const classNameCategory = '.js__categories';
 
 if (length) {
@@ -67,6 +69,7 @@ function setAjax(theElement, theType) {
 	const parentId = '#' + $parent.attr('id');
 	const index = parseInt($parent.data('index'), 10);
 	const $id = $(parentId);
+	const $parents = $id.parents('section');
 	const href = $this.attr('href');
 	const settings = {
 		url: href,
@@ -77,21 +80,44 @@ function setAjax(theElement, theType) {
 	}
 
 	if (theType == 'category') {
+		const settingsSlider = {
+			url: href.replace('-01.html', '-slider.html'),
+		};
+
 		iso[index].remove($id.find(classNameContent));
+		$parents.find(classNameSlider).remove();
+
+		$parents.attr('data-loading', true);
+
+		$.ajax(settingsSlider).done(function (response) {
+			const $response = $(response);
+			const $slider = $response.find(classNameSlider);
+
+			if ($slider.length) {
+				$parents.find(classNameSliders).html($slider);
+
+				$(window).trigger('ajax-loaded');
+			}
+
+			setTimeout(function () {
+				$parents.attr('data-loading', false);
+			}, 400);
+		});
 	}
 
 	$id.find(classNameAction).remove();
+
 	$id.attr('data-loading', true);
 
 	$.ajax(settings).done(function (response) {
 		const $response = $(response);
 		const $content = $response.find(classNameContents);
-		const $btnMore = $response.find(classNameAction);
+		const $theBtnMore = $response.find(classNameAction);
 
 		iso[index].insert($content);
 
-		if ($btnMore.length) {
-			$parent.find(classNameActions).html($btnMore);
+		if ($theBtnMore.length) {
+			$parent.find(classNameActions).html($theBtnMore);
 		}
 
 		setTimeout(function () {

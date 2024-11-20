@@ -16,46 +16,58 @@ const $element = document.getElementsByClassName(element);
 const length = $element.length;
 
 if (length) {
+	initSlider();
+
+	$(window).on('ajax-loaded', function () {
+		initSlider();
+	});
+}
+
+function initSlider() {
 	for (let i = 0; i < length; i++) {
-		const $slider = tns({
-			container: $element[i].getElementsByClassName('js__slides')[0],
-			loop: false,
-			items: 7,
-			gutter: 26,
-			nav: false,
-			speed: 400,
-			mouseDrag: true,
-			responsive: {
-				0: {
-					disable: true,
-				},
-				768: {
-					items: 3,
-					gutter: 20,
-					disable: false,
-				},
-				985: {
-					items: 4,
-					gutter: 26,
-				},
-				1024: {
-					items: 5,
-				},
-				1100: {
-					items: 6,
-				},
-				1300: {
-					items: 7,
-				},
-			},
-		});
+		if (!$element[i].classList.contains(className.Active)) {
+			$element[i].classList.add(className.Active);
 
-		$slider.events.on('transitionStart', () => {
-			$element[i].classList.add(className.IsAnimate);
-		});
+			const $slider = tns({
+				container: $element[i].getElementsByClassName('js__slides')[0],
+				loop: false,
+				items: 7,
+				gutter: 26,
+				nav: false,
+				speed: 400,
+				mouseDrag: true,
+				responsive: {
+					0: {
+						disable: true,
+					},
+					768: {
+						items: 3,
+						gutter: 20,
+						disable: false,
+					},
+					985: {
+						items: 4,
+						gutter: 26,
+					},
+					1024: {
+						items: 5,
+					},
+					1100: {
+						items: 6,
+					},
+					1300: {
+						items: 7,
+					},
+				},
+			});
 
-		$slider.events.on('transitionEnd', () => {
-			$element[i].classList.remove(className.IsAnimate);
-		});
+			$slider.events.on('transitionStart', () => {
+				$element[i].classList.add(className.IsAnimate);
+			});
+
+			$slider.events.on('transitionEnd', () => {
+				$element[i].classList.remove(className.IsAnimate);
+			});
+		}
 	}
 }
